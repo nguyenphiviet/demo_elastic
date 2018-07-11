@@ -1,0 +1,12 @@
+<tr id="job-<%= job.id %>">
+  <td><%= index_for index, @jobs.current_page,
+    Settings.per_page %></td>
+  <td><%= job.name %></td>
+  <td><%= job.description %></td>
+  <td align="center">
+    <%= link_to edit_job_path(job) do %>
+      Edit
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

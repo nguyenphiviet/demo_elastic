@@ -5,11 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "bootstrap-sass", "3.3.7"
+gem "config"
+gem "font-awesome-rails"
+gem "jquery-rails"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 gem "faker"
 gem "figaro"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem 'rails', '~> 5.1.6'
-gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
