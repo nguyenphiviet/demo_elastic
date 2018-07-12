@@ -1,0 +1,42 @@
+<div class="panel panel-info">
+  <div class="panel-heading">Panel Heading for Companies</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <%= page_entries_info @companies %>
+      </div>
+      <div class="col-md-6">
+        <%= form_tag companies_path, method: :get, enforce_utf8: false,
+          class: "form-inline pull-right" do %>
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for" %>
+          <span class="input-group-btn">
+            <%= button_tag name: nil, class: "btn btn-default" do %>
+              <i class="glyphicon glyphicon-search"></i>
+            <% end %>
+          </span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <table class="table table-dark table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @companies.each_with_index do |company, index| %>
+          <%= render "company", company: company, index: index %>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <%= paginate @companies, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

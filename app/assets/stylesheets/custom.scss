@@ -1,0 +1,57 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+/* pagination */
+/* line 1493, /home/framgia/environment/ecommerce_46/vendor/assets/stylesheets/style.default.css.scss */
+.pagination {
+  margin: 20px 0;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  border-radius: 0;
+}
+
+/* line 1498, /home/framgia/environment/ecommerce_46/vendor/assets/stylesheets/style.default.css.scss */
+.pagination > li > a,
+.pagination > li > span {
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #4fbfa8;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+
+/* line 1507, /home/framgia/environment/ecommerce_46/vendor/assets/stylesheets/style.default.css.scss */
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #348e7b;
+  background-color: #eeeeee;
+  border-color: #dddddd;
+}
+
+/* line 1515, /home/framgia/environment/ecommerce_46/vendor/assets/stylesheets/style.default.css.scss */
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #4fbfa8;
+  border-color: #4fbfa8;
+}
+
+/* line 1526, /home/framgia/environment/ecommerce_46/vendor/assets/stylesheets/style.default.css.scss */
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #999999;
+  background-color: #ffffff;
+  border-color: #dddddd;
+}
+
