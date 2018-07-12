@@ -1,8 +1,10 @@
 30.times do |t|
   name = Faker::Company.name
   address = Faker::Address.full_address
+  email = "example-#{t+1}@gmail.com"
   Company.create!(name:  name,
-             address: address)
+             address: address,
+             email: email)
 end
 
 jobs_list = [
@@ -26,8 +28,10 @@ for id in 1..30
       Faker::Job.seniority + " - " + Faker::Job.position + " - " +
       Faker::Job.key_skill + " - " + Faker::Job.employment_type + " - " +
       Faker::Job.education_level
+    salary = Faker::Number.between(0, 1000)
     company.jobs.create!(
       name:  name,
-      description: description)
+      description: description,
+      salary: salary)
   end
 end

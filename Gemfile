@@ -7,6 +7,7 @@ end
 
 gem "bootstrap-sass", "3.3.7"
 gem "config"
+gem "chewy"
 gem "font-awesome-rails"
 gem "jquery-rails"
 gem "kaminari"
