@@ -4,7 +4,6 @@ class CompaniesController < ApplicationController
   end
 
   private
-
   def search_params
     params.permit :search
   end
