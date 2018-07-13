@@ -4,14 +4,33 @@ class JobsController < ApplicationController
   end
 
   private
-
   def search_params
-    params.permit :search
+    params.permit :search, :page
   end
 
   def load_jobs params
-    result = params[:search].present? ? Job.by_name(params[:search]) : Job.all
-    result = result.select(:id, :name, :description)
-      .page(params[:page]).per(Settings.per_page)
+    # result = params[:search].present? ? Job.by_name(params[:search]) : Job.all
+    # result = result.select(:id, :name, :description)
+    #   .page(params[:page]).per(Settings.per_page)
+
+    # scope = params[:search].present? ?
+    #   JobsIndex::Job.query(match: {name: params[:search]}) :
+    #   JobsIndex::Job.all
+
+    # scope = params[:search].present? ?
+    #   JobsIndex::Job.filter(match: {name: params[:search]}) :
+    #   JobsIndex::Job.all
+
+    # scope = params[:search].present? ?
+    #   JobsIndex::Job.query(match: {name: params[:search]}).filter(query: {description: params[:search]}) :
+    #   JobsIndex::Job.all
+
+    scope = params[:search].present? ?
+      JobsIndex::Job.query(match: {name: params[:search]}) :
+      JobsIndex::Job.all
+
+    # scope = scope.merge(:description)
+    scope.page(params[:page]).per(Settings.per_page)
+
   end
 end
