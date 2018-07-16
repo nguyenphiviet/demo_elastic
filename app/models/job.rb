@@ -1,7 +1,5 @@
 class Job < ApplicationRecord
   belongs_to :company
-  scope :by_name, ->(keyword){where "name LIKE '%#{keyword}%'"}
-  scope :by_description, ->{where "description LIKE '%Representative%'"}
   update_index "jobs#job", :self
 
   # belong_to associated may need update both Job and Company
@@ -18,7 +16,6 @@ class Job < ApplicationRecord
       }
     )
   end
-  # type: "phrase_prefix",
 
   def self.get_all
     JobsIndex::Job.query(
