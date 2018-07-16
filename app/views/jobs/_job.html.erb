@@ -1,7 +1,12 @@
 <tr id="job-<%= job.id %>">
   <td><%= index_for index, @jobs.current_page,
     Settings.per_page %></td>
-  <td><%= job.name %></td>
+  <td>
+    Name: <b><%= job.company["name"] %></b> <br>
+    Email: <span class="font-italic color-red"><%= job.company["email"] %></span>
+    <p>Address: <%= job.company["address"] %></p>
+  </td>
+  <td><%= job.name %> - <span class="font-bold color-blue"><%= format_currency job.salary %></span></td>
   <td><%= job.description %></td>
   <td align="center">
     <%= link_to edit_job_path(job) do %>
